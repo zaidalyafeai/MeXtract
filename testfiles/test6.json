@@ -1,0 +1,11 @@
+{
+    "Name": "ahmad",
+    "Age": 20,
+    "Website": "https://www.google.com",
+    "Hobbies": ["swimming", "coding", "reading"],
+    "Married": true,
+    "Sons": [
+        {"Name": "ahmad", "Age": 20},
+        {"Name": "ali", "Age": 10}
+    ]
+}

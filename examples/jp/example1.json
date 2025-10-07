@@ -1,0 +1,48 @@
+{
+    "Name": "jpReviewClassification",
+    "Link": "https://github.com/rinafujimoto/jpReviewClassification",
+    "HF Link": "",
+    "License": "CC BY-NC-ND 3.0",
+    "Year": 2011,
+    "Language": "jp",
+    "Domain": [
+        "web pages",
+        "captions",
+        "news articles"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "crawling"
+    ],
+    "Description": "jpReviewClassification is a review classification dataset, that contains 9733.0 sentences",
+    "Volume": 9733.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "jpReviewClassification: A review classification dataset for jp",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "review classification"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Rina Fujimoto",
+        "Yuki Nakamura"
+    ],
+    "Affiliations": [
+        "Nagoya University",
+        "Osaka University"
+    ],
+    "Abstract": "",
+    "Script": "Kanji"
+}

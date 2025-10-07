@@ -1,0 +1,47 @@
+{
+    "Name": "enFakeNewsDetection",
+    "Link": "https://github.com/sophiamitchell/enFakeNewsDetection",
+    "HF Link": "",
+    "License": "CC BY-SA 4.0",
+    "Year": 2019,
+    "Language": "en",
+    "Domain": [
+        "news articles",
+        "captions",
+        "public datasets"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "machine annotation"
+    ],
+    "Description": "enFakeNewsDetection is a fake news detection dataset, that contains 8212.0 sentences",
+    "Volume": 8212.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "enFakeNewsDetection: A fake news detection dataset for en",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "fake news detection"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Sophia Mitchell",
+        "Emily Carter"
+    ],
+    "Affiliations": [
+        "University of Cambridge",
+        "University of Oxford"
+    ],
+    "Abstract": ""
+}

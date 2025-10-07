@@ -1,0 +1,47 @@
+{
+    "Name": "jpCross-lingualInformationRetrieval",
+    "Link": "https://github.com/harutotakahashi/jpCross-lingualInformationRetrieval",
+    "HF Link": "",
+    "License": "CC BY-SA 4.0",
+    "Year": 2017,
+    "Language": "jp",
+    "Domain": [
+        "LLM",
+        "social media"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "human annotation"
+    ],
+    "Description": "jpCross-lingualInformationRetrieval is a cross-lingual information retrieval dataset, that contains 8602.0 sentences",
+    "Volume": 8602.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "jpCross-lingualInformationRetrieval: A cross-lingual information retrieval dataset for jp",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "cross-lingual information retrieval"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Haruto Takahashi",
+        "Souta Yamamoto"
+    ],
+    "Affiliations": [
+        "Kyoto University",
+        "University of Tokyo"
+    ],
+    "Abstract": "",
+    "Script": "mixed"
+}

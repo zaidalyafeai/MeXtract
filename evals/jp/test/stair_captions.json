@@ -1,0 +1,83 @@
+{
+    "Name": "STAIR Captions",
+    "Link": "http://captions.stair.center/",
+    "HF_Link": "https://huggingface.co/datasets/shunk031/STAIR-Captions",
+    "License": "CC BY 4.0",
+    "Year": 2017,
+    "Language": "jp",
+    "Domain": [
+        "captions",
+        "public datasets"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "human annotation"
+    ],
+    "Description": "A large-scale image caption dataset in Japanese, based on the COCO dataset. It contains 820,310 Japanese captions for 164,062 images, collected via crowdsourcing.",
+    "Volume": 820310.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Low",
+    "Provider": [
+        "The University of Tokyo",
+        "National Institute of Informatics"
+    ],
+    "Derived_From": [
+        "MS COCO"
+    ],
+    "Paper_Title": "STAIR Captions: Constructing a Large-Scale Japanese Image Caption Dataset",
+    "Paper_Link": "https://arxiv.org/pdf/1705.00823",
+    "Script": "mixed",
+    "Tokenized": false,
+    "Host": "other",
+    "Access": "Free",
+    "Cost": "",
+    "Test_Split": false,
+    "Tasks": [
+        "image captioning"
+    ],
+    "Venue_Title": "arXiv",
+    "Venue_Type": "preprint",
+    "Venue_Name": "",
+    "Authors": [
+        "Yuya Yoshikawa",
+        "Yutaro Shigeto",
+        "Akikazu Takeuchi"
+    ],
+    "Affiliations": [
+        "The University of Tokyo",
+        "National Institute of Informatics"
+    ],
+    "Abstract": "In recent years, automatic generation of image descriptions (captions), that is, image captioning, has attracted a great deal of attention. In this paper, we particularly consider generating Japanese captions for images. Since most available caption datasets have been constructed for English language, there are few datasets for Japanese. To tackle this problem, we construct a large-scale Japanese image caption dataset based on images from MS-COCO, which is called STAIR Captions. STAIR Captions consists of 820,310 Japanese captions for 164,062 images. In the experiment, we show that a neural network trained using STAIR Captions can generate more natural and better Japanese captions, compared to those generated using English-Japanese machine translation after generating English captions.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Link": 1,
+        "HF_Link": 0,
+        "License": 0,
+        "Year": 1,
+        "Language": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Script": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 1,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

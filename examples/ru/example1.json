@@ -1,0 +1,45 @@
+{
+    "Name": "ruMultipleChoiceQuestionAnswering",
+    "Link": "https://github.com/ivanpetrov/ruMultipleChoiceQuestionAnswering",
+    "HF Link": "",
+    "License": "LGPL-3.0",
+    "Year": 2011,
+    "Language": "ru",
+    "Domain": [
+        "news articles"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "LLM generated"
+    ],
+    "Description": "ruMultipleChoiceQuestionAnswering is a multiple choice question answering dataset, that contains 3036.0 sentences",
+    "Volume": 3036.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "XVVY"
+    ],
+    "Derived From": [],
+    "Paper Title": "ruMultipleChoiceQuestionAnswering: A multiple choice question answering dataset for ru",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "multiple choice question answering"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Ivan Petrov",
+        "Natalia Smirnova"
+    ],
+    "Affiliations": [
+        "Novosibirsk State University",
+        "Saint Petersburg Polytechnic University"
+    ],
+    "Abstract": ""
+}

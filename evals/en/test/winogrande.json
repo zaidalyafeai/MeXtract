@@ -1,0 +1,79 @@
+{
+    "Name": "WinoGrande",
+    "Link": "http://winogrande.allenai.org",
+    "HF_Link": "https://huggingface.co/datasets/ErnestSDavis/winograd_wsc",
+    "License": "CC BY 4.0",
+    "Year": 2019,
+    "Language": "en",
+    "Domain": [
+        "web pages"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "manual curation"
+    ],
+    "Description": "WinoGrande is a large-scale dataset of 44,000 problems inspired by the original Winograd Schema Challenge (WSC). The dataset was constructed through a carefully designed crowdsourcing procedure followed by a systematic bias reduction.",
+    "Volume": 43972.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Low",
+    "Provider": [
+        "Allen Institute for Artificial Intelligence",
+        "University of Washington"
+    ],
+    "Derived_From": [],
+    "Paper_Title": "WinoGrande: An Adversarial Winograd Schema Challenge at Scale",
+    "Paper_Link": "https://arxiv.org/pdf/1907.10641",
+    "Tokenized": false,
+    "Host": "other",
+    "Access": "Free",
+    "Cost": "",
+    "Test_Split": true,
+    "Tasks": [
+        "commonsense reasoning"
+    ],
+    "Venue_Title": "arXiv",
+    "Venue_Type": "preprint",
+    "Venue_Name": "",
+    "Authors": [
+        "Keisuke Sakaguchi",
+        "Ronan Le Bras",
+        "Chandra Bhagavatula",
+        "Yejin Choi"
+    ],
+    "Affiliations": [
+        "Allen Institute for Artificial Intelligence",
+        "University of Washington"
+    ],
+    "Abstract": "The Winograd Schema Challenge (WSC) (Levesque, Davis, and Morgenstern 2011), a benchmark for commonsense reasoning, is a set of 273 expert-crafted pronoun resolution problems originally designed to be unsolvable for statistical models that rely on selectional preferences or word associations. However, recent advances in neural language models have already reached around 90% accuracy on variants of WSC. This raises an important question whether these models have truly acquired robust commonsense capabilities or whether they rely on spurious biases in the datasets that lead to an overestimation of the true capabilities of machine commonsense. To investigate this question, we introduce WinoGrande, a large-scale dataset of 44k problems, inspired by the original WSC design, but adjusted to improve both the scale and the hardness of the dataset. The key steps of the dataset construction consist of (1) a carefully designed crowdsourcing procedure, followed by (2) systematic bias reduction using a novel AfLite algorithm that generalizes human-detectable word associations to machine-detectable embedding associations. The best state-of-the-art methods on WinoGrande achieve 59.4-79.1%, which are 15-35% below human performance of 94.0%, depending on the amount of the training data allowed. Furthermore, we establish new state-of-the-art results on five related benchmarks - WSC (90.1%), DPR (93.1%), COPA (90.6%), KnowRef (85.6%), and Winogender (97.1%). These results have dual implications: on one hand, they demonstrate the effectiveness of WinoGrande when used as a resource for transfer learning. On the other hand, they raise a concern that we are likely to be overestimating the true capabilities of machine commonsense across all these benchmarks. We emphasize the importance of algorithmic bias reduction in existing and future benchmarks to mitigate such overestimation.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Link": 1,
+        "HF_Link": 0,
+        "License": 0,
+        "Year": 1,
+        "Language": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 1,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

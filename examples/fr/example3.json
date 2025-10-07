@@ -1,0 +1,47 @@
+{
+    "Name": "frQuestionAnswering",
+    "Link": "https://github.com/jean-pierremartin/frQuestionAnswering",
+    "HF Link": "",
+    "License": "GPL-1.0",
+    "Year": 2019,
+    "Language": "fr",
+    "Domain": [
+        "news articles",
+        "LLM",
+        "TV Channels"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "manual curation"
+    ],
+    "Description": "frQuestionAnswering is a question answering dataset, that contains 1983.0 sentences",
+    "Volume": 1983.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "frQuestionAnswering: A question answering dataset for fr",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "question answering"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Jean-Pierre Martin",
+        "Camille Laurent"
+    ],
+    "Affiliations": [
+        "Sorbonne University",
+        "Universit\u00e9 de Bordeaux"
+    ],
+    "Abstract": ""
+}

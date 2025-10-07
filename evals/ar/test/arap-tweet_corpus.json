@@ -1,0 +1,85 @@
+{
+    "Name": "Arap-Tweet",
+    "Subsets": [],
+    "HF_Link": "",
+    "Link": "https://arap.qatar.cmu.edu/templates/research.html",
+    "License": "unknown",
+    "Year": 2018,
+    "Language": "ar",
+    "Dialect": "mixed",
+    "Domain": [
+        "social media"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "crawling",
+        "human annotation"
+    ],
+    "Description": "Arap-Tweet is a large-scale, multi-dialectal Arabic Twitter corpus containing 2.4 million tweets from 11 regions across 16 countries in the Arab world. The dataset includes annotations for dialect, age group, and gender of the users.",
+    "Volume": 2400000.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Medium",
+    "Provider": [
+        "Hamad Bin Khalifa University",
+        "Carnegie Mellon University Qatar"
+    ],
+    "Derived_From": [],
+    "Paper_Title": "Arap-Tweet: A Large Multi-Dialect Twitter Corpus for Gender, Age, and Language Variety Identification",
+    "Paper_Link": "https://arxiv.org/pdf/1808.07674",
+    "Script": "Arab",
+    "Tokenized": false,
+    "Host": "other",
+    "Access": "Upon-Request",
+    "Cost": "",
+    "Test_Split": false,
+    "Tasks": [
+        "dialect identification",
+        "gender identification"
+    ],
+    "Venue_Title": "arXiv",
+    "Venue_Type": "preprint",
+    "Venue_Name": "",
+    "Authors": [
+        "Wajdi Zaghouani",
+        "Anis Charfi"
+    ],
+    "Affiliations": [
+        "Hamad Bin Khalifa University",
+        "Carnegie Mellon University Qatar"
+    ],
+    "Abstract": "In this paper, we present Arap-Tweet, which is a large-scale and multi-dialectal corpus of Tweets from 11 regions and 16 countries in the Arab world representing the major Arabic dialectal varieties. To build this corpus, we collected data from Twitter and we provided a team of experienced annotators with annotation guidelines that they used to annotate the corpus for age categories, gender, and dialectal variety. During the data collection effort, we based our search on distinctive keywords that are specific to the different Arabic dialects and we also validated the location using Twitter API. In this paper, we report on the corpus data collection and annotation efforts. We also present some issues that we encountered during these phases. Then, we present the results of the evaluation performed to ensure the consistency of the annotation. The provided corpus will enrich the limited set of available language resources for Arabic and will be an invaluable enabler for developing author profiling tools and NLP tools for Arabic.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Subsets": 1,
+        "HF_Link": 0,
+        "Link": 0,
+        "License": 0,
+        "Year": 1,
+        "Language": 1,
+        "Dialect": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Script": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 0,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

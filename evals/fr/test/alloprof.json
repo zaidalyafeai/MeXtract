@@ -1,0 +1,80 @@
+{
+    "Name": "Alloprof",
+    "Link": "https://huggingface.co/datasets/antoinelb7/alloprof",
+    "HF_Link": "https://huggingface.co/datasets/antoinelb7/alloprof",
+    "License": "MIT License",
+    "Year": 2023,
+    "Language": "multilingual",
+    "Domain": [
+        "web pages"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "manual curation",
+        "human annotation"
+    ],
+    "Description": "A French question-answering dataset from the Alloprof educational help website. It contains 29,349 questions from K-12 students and their explanations, often including images and links to 2,596 reference pages, covering various school subjects like math, French, and science.",
+    "Volume": 29349.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Low",
+    "Provider": [
+        "Alloprof",
+        "Mila"
+    ],
+    "Derived_From": [],
+    "Paper_Title": "Alloprof: a French question-answer education dataset and its use in an information retrieval case study",
+    "Paper_Link": "https://arxiv.org/pdf/2302.07738",
+    "Tokenized": false,
+    "Host": "HuggingFace",
+    "Access": "Free",
+    "Cost": "",
+    "Test_Split": false,
+    "Tasks": [
+        "question answering",
+        "information retrieval"
+    ],
+    "Venue_Title": "arXiv",
+    "Venue_Type": "preprint",
+    "Venue_Name": "",
+    "Authors": [
+        "Antoine Lefebvre-Brossard",
+        "Stephane Gazaille",
+        "Michel C. Desmarais"
+    ],
+    "Affiliations": [
+        "Mila-Quebec AI Institute",
+        "Polytechnique Montr\u00e9al"
+    ],
+    "Abstract": "Teachers and students are increasingly relying on online learning resources to supplement the ones provided in school. This increase in the breadth and depth of available resources is a great thing for students, but only provided they are able to find answers to their queries. Question-answering and information retrieval systems have benefited from public datasets to train and evaluate their algorithms, but most of these datasets have been in English text written by and for adults. We introduce a new public French question-answering dataset collected from Alloprof, a Quebec-based primary and high-school help website, containing 29 349 questions and their explanations in a variety of school subjects from 10 368 students, with more than half of the explanations containing links to other questions or some of the 2 596 reference pages on the website. We also present a case study of this dataset in an information retrieval task. This dataset was collected on the Alloprof public forum, with all questions verified for their appropriateness and the explanations verified both for their appropriateness and their relevance to the question. To predict relevant documents, architectures using pre-trained BERT models were fine-tuned and evaluated. This dataset will allow researchers to develop question-answering, information retrieval and other algorithms specifically for the French speaking education context. Furthermore, the range of language proficiency, images, mathematical symbols and spelling mistakes will necessitate algorithms based on a multimodal comprehension. The case study we present as a baseline shows an approach that relies on recent techniques provides an acceptable performance level, but more work is necessary before it can reliably be used and trusted in a production setting.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Link": 1,
+        "HF_Link": 1,
+        "License": 0,
+        "Year": 1,
+        "Language": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 1,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

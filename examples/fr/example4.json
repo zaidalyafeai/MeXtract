@@ -1,0 +1,46 @@
+{
+    "Name": "frFakeNewsDetection",
+    "Link": "https://github.com/camillelaurent/frFakeNewsDetection",
+    "HF Link": "",
+    "License": "CC BY-SA 1.0",
+    "Year": 2017,
+    "Language": "fr",
+    "Domain": [
+        "TV Channels",
+        "books"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "LLM generated"
+    ],
+    "Description": "frFakeNewsDetection is a fake news detection dataset, that contains 9468.0 sentences",
+    "Volume": 9468.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "DOQD"
+    ],
+    "Derived From": [],
+    "Paper Title": "frFakeNewsDetection: A fake news detection dataset for fr",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "fake news detection"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Camille Laurent",
+        "\u00c9mile Moreau"
+    ],
+    "Affiliations": [
+        "Sorbonne University",
+        "Universit\u00e9 de Bordeaux"
+    ],
+    "Abstract": ""
+}

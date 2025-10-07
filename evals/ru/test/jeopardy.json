@@ -1,0 +1,75 @@
+{
+    "Name": "Russian Jeopardy",
+    "Link": "https://github.com/evrog/Russian-QA-Jeopardy",
+    "HF_Link": "",
+    "License": "custom",
+    "Year": 2024,
+    "Language": "ru",
+    "Domain": [
+        "TV Channels"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "crawling"
+    ],
+    "Description": "A dataset of 29,375 Russian quiz-show questions of the Jeopardy! type, collected from the ChGK database. The questions are fact-oriented and suitable for open-domain question answering tasks.",
+    "Volume": 29375.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Low",
+    "Provider": [
+        "Tyumen State University"
+    ],
+    "Derived_From": [],
+    "Paper_Title": "Russian Jeopardy! Data Set for Question-Answering Systems",
+    "Paper_Link": "https://arxiv.org/pdf/2112.02325",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test_Split": true,
+    "Tasks": [
+        "question answering"
+    ],
+    "Venue_Title": "arXiv",
+    "Venue_Type": "preprint",
+    "Venue_Name": "",
+    "Authors": [
+        "Elena Mikhalkova",
+        "Alexander Khlyupin"
+    ],
+    "Affiliations": [
+        "Tyumen State University"
+    ],
+    "Abstract": "Question answering (QA) is one of the most common NLP tasks that relates to named entity recognition, fact extraction, semantic search and some other fields. In industry, it is much appreciated in chatbots and corporate information systems. It is also a challenging task that attracted the attention of a very general audience at the quiz show Jeopardy! In this article we describe a Jeopardy!-like Russian QA data set collected from the official Russian quiz database Chgk (che ge ka). The data set includes 379,284 quiz-like questions with 29,375 from the Russian analogue of Jeopardy! - \"Own Game\". We observe its linguistic features and the related QA-task. We conclude about perspectives of a QA competition based on the data set collected from this database.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Link": 1,
+        "HF_Link": 0,
+        "License": 1,
+        "Year": 1,
+        "Language": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 1,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

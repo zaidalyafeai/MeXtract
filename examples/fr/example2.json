@@ -1,0 +1,45 @@
+{
+    "Name": "frNaturalLanguageInference",
+    "Link": "https://github.com/camillelaurent/frNaturalLanguageInference",
+    "HF Link": "https://huggingface.co/datasets/BZMH/frNaturalLanguageInference",
+    "License": "BSD",
+    "Year": 2022,
+    "Language": "fr",
+    "Domain": [
+        "web pages"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "human annotation"
+    ],
+    "Description": "frNaturalLanguageInference is a natural language inference dataset, that contains 3432.0 sentences",
+    "Volume": 3432.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "BZMH"
+    ],
+    "Derived From": [],
+    "Paper Title": "frNaturalLanguageInference: A natural language inference dataset for fr",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "natural language inference"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Camille Laurent",
+        "Louis Dupont"
+    ],
+    "Affiliations": [
+        "Sorbonne University",
+        "\u00c9cole Polytechnique"
+    ],
+    "Abstract": ""
+}

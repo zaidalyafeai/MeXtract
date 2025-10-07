@@ -1,0 +1,47 @@
+{
+    "Name": "ruDependencyParsing",
+    "Link": "https://github.com/sergeyvolkov/ruDependencyParsing",
+    "HF Link": "https://huggingface.co/datasets/MRED/ruDependencyParsing",
+    "License": "LDC User Agreement",
+    "Year": 2017,
+    "Language": "ru",
+    "Domain": [
+        "social media",
+        "public datasets",
+        "wikipedia"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "LLM generated"
+    ],
+    "Description": "ruDependencyParsing is a dependency parsing dataset, that contains 9675.0 sentences",
+    "Volume": 9675.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "MRED"
+    ],
+    "Derived From": [],
+    "Paper Title": "ruDependencyParsing: A dependency parsing dataset for ru",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "dependency parsing"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Sergey Volkov",
+        "Olga Sokolova"
+    ],
+    "Affiliations": [
+        "Kazan Federal University",
+        "Tomsk Polytechnic University"
+    ],
+    "Abstract": ""
+}

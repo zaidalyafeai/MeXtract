@@ -1,0 +1,47 @@
+{
+    "Name": "jpTransliteration",
+    "Link": "https://github.com/hinatanaka/jpTransliteration",
+    "HF Link": "",
+    "License": "CC BY-NC 1.0",
+    "Year": 2013,
+    "Language": "jp",
+    "Domain": [
+        "captions",
+        "reviews"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "crawling"
+    ],
+    "Description": "jpTransliteration is a transliteration dataset, that contains 1085.0 sentences",
+    "Volume": 1085.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "QBGA"
+    ],
+    "Derived From": [],
+    "Paper Title": "jpTransliteration: A transliteration dataset for jp",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "transliteration"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Hina Tanaka",
+        "Souta Yamamoto"
+    ],
+    "Affiliations": [
+        "Kyoto University",
+        "Nagoya University"
+    ],
+    "Abstract": "",
+    "Script": "Katakana"
+}

@@ -1,0 +1,83 @@
+{
+    "Name": "RuDSI",
+    "Link": "https://github.com/kategavrishina/RuDSI",
+    "HF_Link": "",
+    "License": "unknown",
+    "Year": 2022,
+    "Language": "ru",
+    "Domain": [
+        "public datasets",
+        "wikipedia"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "human annotation",
+        "machine annotation"
+    ],
+    "Description": "A benchmark dataset for word sense induction (WSI) in Russian. It was created using manual annotation and semi-automatic clustering of Word Usage Graphs (WUGs) from the Russian National Corpus. The sense inventories are data-driven, not based on predefined dictionaries.",
+    "Volume": 840.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Low",
+    "Provider": [
+        "HSE University"
+    ],
+    "Derived_From": [
+        "RNC",
+        "RuWordNet"
+    ],
+    "Paper_Title": "RuDSI: graph-based word sense induction dataset for Russian",
+    "Paper_Link": "https://arxiv.org/pdf/2209.13750",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test_Split": false,
+    "Tasks": [
+        "other"
+    ],
+    "Venue_Title": "arXiv",
+    "Venue_Type": "preprint",
+    "Venue_Name": "",
+    "Authors": [
+        "Anna Aksenova",
+        "Ekaterina Gavrishina",
+        "Elisey Rykov",
+        "Andrey Kutuzov"
+    ],
+    "Affiliations": [
+        "National Research University Higher School of Economics",
+        "University of Oslo"
+    ],
+    "Abstract": "We present RuDSI, a new benchmark for word sense induction (WSI) in Russian. The dataset was created using manual annotation and semi-automatic clustering of Word Usage Graphs (WUGs). Unlike prior WSI datasets for Russian, RuDSI is completely data-driven (based on texts from Russian National Corpus), with no external word senses imposed on annotators. Depending on the parameters of graph clustering, different derivative datasets can be produced from raw annotation. We report the performance that several baseline WSI methods obtain on RuDSI and discuss possibilities for improving these scores.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Link": 1,
+        "HF_Link": 0,
+        "License": 0,
+        "Year": 1,
+        "Language": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 1,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "Name": "ruInformationRetrieval",
+    "Link": "https://github.com/olgasokolova/ruInformationRetrieval",
+    "HF Link": "",
+    "License": "CC BY-NC 2.0",
+    "Year": 2025,
+    "Language": "ru",
+    "Domain": [
+        "wikipedia",
+        "social media"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "LLM generated"
+    ],
+    "Description": "ruInformationRetrieval is a information retrieval dataset, that contains 7525.0 sentences",
+    "Volume": 7525.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "HPOJ"
+    ],
+    "Derived From": [],
+    "Paper Title": "ruInformationRetrieval: A information retrieval dataset for ru",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "information retrieval"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Olga Sokolova",
+        "Natalia Smirnova"
+    ],
+    "Affiliations": [
+        "Kazan Federal University",
+        "Tomsk Polytechnic University"
+    ],
+    "Abstract": ""
+}

@@ -1,0 +1,46 @@
+{
+    "Name": "ruGenderIdentification",
+    "Link": "https://github.com/dmitryivanov/ruGenderIdentification",
+    "HF Link": "",
+    "License": "Apache-1.0",
+    "Year": 2020,
+    "Language": "ru",
+    "Domain": [
+        "wikipedia",
+        "public datasets"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "LLM generated"
+    ],
+    "Description": "ruGenderIdentification is a gender identification dataset, that contains 6989.0 sentences",
+    "Volume": 6989.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "ruGenderIdentification: A gender identification dataset for ru",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "gender identification"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Dmitry Ivanov",
+        "Ivan Petrov"
+    ],
+    "Affiliations": [
+        "Novosibirsk State University",
+        "Moscow State University"
+    ],
+    "Abstract": ""
+}

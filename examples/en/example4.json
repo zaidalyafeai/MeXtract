@@ -1,0 +1,45 @@
+{
+    "Name": "enNaturalLanguageInference",
+    "Link": "https://github.com/sophiamitchell/enNaturalLanguageInference",
+    "HF Link": "",
+    "License": "CC BY-SA 4.0",
+    "Year": 2015,
+    "Language": "en",
+    "Domain": [
+        "books"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "human annotation"
+    ],
+    "Description": "enNaturalLanguageInference is a natural language inference dataset, that contains 2026.0 sentences",
+    "Volume": 2026.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "enNaturalLanguageInference: A natural language inference dataset for en",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "natural language inference"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Sophia Mitchell",
+        "Emily Carter"
+    ],
+    "Affiliations": [
+        "University of Oxford",
+        "Stanford University"
+    ],
+    "Abstract": ""
+}

@@ -1,0 +1,47 @@
+{
+    "Name": "jpMeterClassification",
+    "Link": "https://github.com/rinafujimoto/jpMeterClassification",
+    "HF Link": "https://huggingface.co/datasets/PSDV/jpMeterClassification",
+    "License": "Apache-2.0",
+    "Year": 2010,
+    "Language": "jp",
+    "Domain": [
+        "web pages",
+        "social media"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "human annotation"
+    ],
+    "Description": "jpMeterClassification is a meter classification dataset, that contains 3191.0 sentences",
+    "Volume": 3191.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        "PSDV"
+    ],
+    "Derived From": [],
+    "Paper Title": "jpMeterClassification: A meter classification dataset for jp",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "meter classification"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Rina Fujimoto",
+        "Yuki Nakamura"
+    ],
+    "Affiliations": [
+        "Osaka University",
+        "Tohoku University"
+    ],
+    "Abstract": "",
+    "Script": "mixed"
+}

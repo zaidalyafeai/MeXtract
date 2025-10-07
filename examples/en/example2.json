@@ -1,0 +1,47 @@
+{
+    "Name": "enInstructionTuning",
+    "Link": "https://github.com/danielfoster/enInstructionTuning",
+    "HF Link": "",
+    "License": "CC BY-NC 1.0",
+    "Year": 2019,
+    "Language": "en",
+    "Domain": [
+        "wikipedia",
+        "news articles",
+        "commentary"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "human annotation"
+    ],
+    "Description": "enInstructionTuning is a instruction tuning dataset, that contains 6618.0 sentences",
+    "Volume": 6618.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "enInstructionTuning: A instruction tuning dataset for en",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "instruction tuning"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Daniel Foster",
+        "Sophia Mitchell"
+    ],
+    "Affiliations": [
+        "Massachusetts Institute of Technology",
+        "University of Cambridge"
+    ],
+    "Abstract": ""
+}

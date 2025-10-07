@@ -1,0 +1,82 @@
+{
+    "Name": "HeadlineCause",
+    "Link": "https://github.com/IlyaGusev/HeadlineCause",
+    "HF_Link": "https://huggingface.co/datasets/IlyaGusev/headline_cause",
+    "License": "CC0",
+    "Year": 2021,
+    "Language": "multilingual",
+    "Domain": [
+        "news articles",
+        "public datasets",
+        "web pages"
+    ],
+    "Form": "text",
+    "Collection_Style": [
+        "human annotation",
+        "manual curation"
+    ],
+    "Description": "A dataset for detecting implicit causal relations between pairs of news headlines in English and Russian. The pairs are labeled through crowdsourcing and vary from unrelated to having causation or refutation relations.",
+    "Volume": 9553.0,
+    "Unit": "sentences",
+    "Ethical_Risks": "Low",
+    "Provider": [
+        "Moscow Institute of Physics and Technology",
+        "Yandex"
+    ],
+    "Derived_From": [
+        "Lenta corpus"
+    ],
+    "Paper_Title": "HeadlineCause: A Dataset of News Headlines for Detecting Causalities",
+    "Paper_Link": "https://arxiv.org/pdf/2108.12626",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test_Split": true,
+    "Tasks": [
+        "natural language inference"
+    ],
+    "Venue_Title": "Preprint",
+    "Venue_Type": "preprint",
+    "Venue_Name": "arXiv",
+    "Authors": [
+        "Ilya Gusev",
+        "Alexey Tikhonov"
+    ],
+    "Affiliations": [
+        "Moscow Institute of Physics and Technology",
+        "Yandex"
+    ],
+    "Abstract": "Detecting implicit causal relations in texts is a task that requires both common sense and world knowledge. Existing datasets are focused either on commonsense causal reasoning or explicit causal relations. In this work, we present HeadlineCause, a dataset for detecting implicit causal relations between pairs of news headlines. The dataset includes over 5000 headline pairs from English news and over 9000 headline pairs from Russian news labeled through crowdsourcing. The pairs vary from totally unrelated or belonging to the same general topic to the ones including causation and refutation relations. We also present a set of models and experiments that demonstrates the dataset validity, including a multilingual XLM-RoBERTa based model for causality detection and a GPT-2 based model for possible effects prediction.",
+    "annotations_from_paper": {
+        "Name": 1,
+        "Link": 1,
+        "HF_Link": 0,
+        "License": 0,
+        "Year": 1,
+        "Language": 1,
+        "Domain": 1,
+        "Form": 1,
+        "Collection_Style": 1,
+        "Description": 1,
+        "Volume": 1,
+        "Unit": 1,
+        "Ethical_Risks": 1,
+        "Provider": 1,
+        "Derived_From": 1,
+        "Paper_Title": 1,
+        "Paper_Link": 1,
+        "Tokenized": 1,
+        "Host": 1,
+        "Access": 1,
+        "Cost": 1,
+        "Test_Split": 1,
+        "Tasks": 1,
+        "Venue_Title": 1,
+        "Venue_Type": 1,
+        "Venue_Name": 1,
+        "Authors": 1,
+        "Affiliations": 1,
+        "Abstract": 1
+    }
+}

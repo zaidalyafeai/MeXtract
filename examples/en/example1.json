@@ -1,0 +1,46 @@
+{
+    "Name": "enTextGeneration",
+    "Link": "https://github.com/oliviabennett/enTextGeneration",
+    "HF Link": "",
+    "License": "CDLA-Permissive-2.0",
+    "Year": 2020,
+    "Language": "en",
+    "Domain": [
+        "TV Channels",
+        "web pages"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "human annotation"
+    ],
+    "Description": "enTextGeneration is a text generation dataset, that contains 5198.0 sentences",
+    "Volume": 5198.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "enTextGeneration: A text generation dataset for en",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "text generation"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Olivia Bennett",
+        "Sophia Mitchell"
+    ],
+    "Affiliations": [
+        "University of Oxford",
+        "Stanford University"
+    ],
+    "Abstract": ""
+}

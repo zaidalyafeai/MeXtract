@@ -1,0 +1,45 @@
+{
+    "Name": "ruNaturalLanguageInference",
+    "Link": "https://github.com/olgasokolova/ruNaturalLanguageInference",
+    "HF Link": "",
+    "License": "CC BY-NC-ND 1.0",
+    "Year": 2013,
+    "Language": "ru",
+    "Domain": [
+        "social media"
+    ],
+    "Form": "text",
+    "Collection Style": [
+        "manual curation"
+    ],
+    "Description": "ruNaturalLanguageInference is a natural language inference dataset, that contains 5132.0 sentences",
+    "Volume": 5132.0,
+    "Unit": "sentences",
+    "Ethical Risks": "Low",
+    "Provider": [
+        ""
+    ],
+    "Derived From": [],
+    "Paper Title": "ruNaturalLanguageInference: A natural language inference dataset for ru",
+    "Paper Link": "",
+    "Tokenized": false,
+    "Host": "GitHub",
+    "Access": "Free",
+    "Cost": "",
+    "Test Split": false,
+    "Tasks": [
+        "natural language inference"
+    ],
+    "Venue Title": "arXiv",
+    "Venue Type": "preprint",
+    "Venue Name": "",
+    "Authors": [
+        "Olga Sokolova",
+        "Sergey Volkov"
+    ],
+    "Affiliations": [
+        "Novosibirsk State University",
+        "Tomsk Polytechnic University"
+    ],
+    "Abstract": ""
+}
