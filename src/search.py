@@ -76,6 +76,12 @@ def truncate_prompt(prompt, sys_prompt, tokenizer, max_model_len, max_output_len
         return truncated_prompt + end_of_prompt
     return prompt + end_of_prompt
 
+def extract(text, model_name, schema_name = "ar", backend = "openrouter", max_model_len = 8192, max_output_len = 2084, schema = None):
+    message, metadata, cost, error = get_metadata(
+        text, model_name, schema_name=schema_name, backend = backend, log = False, max_model_len = max_model_len, max_output_len = max_output_len, schema = schema
+    )
+    return metadata
+    
 def get_metadata(
     paper_text="",
     model_name="gemini-1.5-flash",
