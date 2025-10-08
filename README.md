@@ -97,7 +97,7 @@ class ExampleSchema(TextSchema):
     Married: Field(Bool, 1, 1)
 
 text = """
-My name is Zaid. I am 25 years old. I like swimming and reading. I am is married. 
+My name is Zaid. I am 25 years old. I like swimming and reading. I am married. 
 """
 metadata = extract(
     text, "IVUL-KAUST/MeXtract-3B", schema=ExampleSchema, backend = "transformers"   
