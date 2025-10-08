@@ -280,91 +280,34 @@
                 <h2>📊 Results</h2>
                 <p>We evaluted the performance of 7 LLMs on the 46 annotated papers spanning datasets of different languages. Our results show that Gemini 2.5 Pro achieves the best scores.</p>
                 <table border="1">
-                    <thead>
-                      <tr>
-                        <th>Model</th>
-                        <th>ar</th>
-                        <th>en</th>
-                        <th>jp</th>
-                        <th>fr</th>
-                        <th>ru</th>
-                        <th>multi</th>
-                        <th>Average</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Gemma 3 27B</td>
-                        <td>56.69</td>
-                        <td>60.00</td>
-                        <td>66.32</td>
-                        <td>70.00</td>
-                        <td>66.67</td>
-                        <td>53.68</td>
-                        <td>60.30</td>
-                      </tr>
-                      <tr>
-                        <td>Llama 4 Maverick</td>
-                        <td>58.28</td>
-                        <td>66.67</td>
-                        <td>68.42</td>
-                        <td>68.89</td>
-                        <td>68.89</td>
-                        <td>58.95</td>
-                        <td>62.67</td>
-                      </tr>
-                      <tr>
-                        <td>Qwen 2.5 72B</td>
-                        <td>64.17</td>
-                        <td>62.22</td>
-                        <td>64.21</td>
-                        <td>71.11</td>
-                        <td>65.56</td>
-                        <td>55.79</td>
-                        <td>63.96</td>
-                      </tr>
-                      <tr>
-                        <td>DeepSeek V3</td>
-                        <td>64.17</td>
-                        <td>70.00</td>
-                        <td>65.26</td>
-                        <td>64.44</td>
-                        <td>70.00</td>
-                        <td>54.74</td>
-                        <td>64.56</td>
-                      </tr>
-                      <tr>
-                        <td>Claude 3.5 Sonnet</td>
-                        <td>60.54</td>
-                        <td>66.67</td>
-                        <td>71.58</td>
-                        <td><b>74.44</b></td>
-                        <td><b>73.33</b></td>
-                        <td><b>61.05</b></td>
-                        <td>65.37</td>
-                      </tr>
-                      <tr>
-                        <td>GPT 4o</td>
-                        <td>64.17</td>
-                        <td>71.11</td>
-                        <td>69.47</td>
-                        <td>70.00</td>
-                        <td><b>73.33</b></td>
-                        <td>60.00</td>
-                        <td>66.68</td>
-                      </tr>
-                      <tr>
-                        <td>Gemini 2.5 Pro</td>
-                        <td><b>65.31</b></td>
-                        <td><b>72.22</b></td>
-                        <td><b>74.74</b></td>
-                        <td>68.89</td>
-                        <td><b>73.33</b></td>
-                        <td>56.84</td>
-                        <td><b>67.42</b></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    <table aria-label="Model performance across different categories">
+                        <thead>
+                          <tr>
+                            <th>Model</th>
+                            <th>ar</th>
+                            <th>en</th>
+                            <th>jp</th>
+                            <th>fr</th>
+                            <th>ru</th>
+                            <th>multi</th>
+                            <th>model</th>
+                            <th>Average</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td><strong>Falcon3 3B Instruct</strong></td><td>20.46</td><td>16.30</td><td>20.29</td><td>17.81</td><td>17.23</td><td>16.13</td><td>15.96</td><td>17.74</td></tr>
+                          <tr><td><strong>Llama3.2 3B Instruct</strong></td><td>28.77</td><td>25.17</td><td>33.14</td><td>27.73</td><td>22.21</td><td>22.58</td><td>33.37</td><td>27.57</td></tr>
+                          <tr><td><strong>Gemma 3 4B It</strong></td><td>44.88</td><td>46.50</td><td>48.46</td><td>43.85</td><td>46.06</td><td>42.05</td><td>56.04</td><td>46.83</td></tr>
+                          <tr><td><strong>Qwen2.5 3B Instruct</strong></td><td>49.99</td><td>56.72</td><td>61.13</td><td>57.08</td><td>64.10</td><td>52.07</td><td>59.05</td><td>57.16</td></tr>
+                          <tr><td><strong>MOLE 3B</strong></td><td>23.03</td><td>50.88</td><td>50.83</td><td>50.05</td><td>57.72</td><td>43.34</td><td>17.17</td><td>41.86</td></tr>
+                          <tr><td><strong>Nuextract 2.0 4B</strong></td><td>44.61</td><td>43.57</td><td>43.82</td><td>48.96</td><td>47.78</td><td>40.14</td><td>49.90</td><td>45.54</td></tr>
+                          <tr><td><strong>Nuextract 2.0 8B</strong></td><td>51.93</td><td>58.93</td><td>62.11</td><td>58.41</td><td>63.21</td><td>38.21</td><td>53.70</td><td>55.21</td></tr>
+                          <tr><td><strong>MeXtract 0.5B</strong></td><td>65.96</td><td>69.95</td><td>73.79</td><td>68.42</td><td>72.07</td><td>68.20</td><td>32.41</td><td>64.40</td></tr>
+                          <tr><td><strong>MeXtract 1.5B</strong></td><td>67.06</td><td>73.71</td><td>75.08</td><td>71.57</td><td>76.28</td><td>71.87</td><td>52.05</td><td>69.66</td></tr>
+                          <tr><td><strong>MeXtract 3B</strong></td><td><strong>70.81</strong></td><td><strong>78.02</strong></td><td><strong>78.32</strong></td><td><strong>72.87</strong></td><td><strong>77.51</strong></td><td><strong>74.92</strong></td><td><strong>60.18</strong></td><td><strong>73.23</strong></td></tr>
+                        </tbody>
+                      </table>
+                </table>
                   
             </div>
             <div class="section">
