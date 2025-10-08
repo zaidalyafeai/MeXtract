@@ -250,15 +250,15 @@
         <!-- Abstract Section -->
         <div class="abstract">
             <h2>Abstract</h2>
-            <p>Metadata extraction is essential for cataloging and preserving datasets, enabling effective research discovery and reproducibility, especially given the current exponential growth in scientific research. While Masader (Alyafeai et al., 2021) laid the groundwork for extracting wide range of metadata attributes from Arabic NLP datasets' scholarly articles, it relies heavily on manual annotation. In this paper, we present MOLE, a framework that leverages Large Language Models (LLMs) to automatically extract metadata attributes from scientific papers covering datasets of languages other than Arabic. Our schema-driven methodology processes entire documents across multiple input formats and incorporates robust validation mechanisms for consistent output. Additionally, we introduce a new benchmark to evaluate the research progress on this task. Through systematic analysis of context length, few-shot learning, and web browsing integration, we demonstrate that modern LLMs show promising results in automating this task, highlighting the need for further future work improvements to ensure consistent and reliable performance.</p>
+            <p>Metadata plays a critical role in indexing, documenting, and analyzing scientific literature, yet extracting it accurately and efficiently remains a challenging task. Traditional approaches often rely on rule-based or task-specific models, which struggle to generalize across domains and schema variations. In this paper, we present MeXtract, a family of lightweight language models designed for metadata extraction from scientific papers. The models, ranging from 0.5B to 3B parameters, are built by fine-tuning Qwen 2.5 counterparts. In their size family, MeXtract achieves state-of-the-art performance on metadata extraction on the MOLE benchmark. To further support evaluation, we extend the MOLE benchmark to incorporate model-specific metadata, providing an out-of-domain challenging subset. Our experiments show that fine-tuning on a given schema not only yields high accuracy but also transfers effectively to unseen schemas, demonstrating the robustness and adaptability of our approach. We release all the code, datasets, and models openly for the research community..</p>
         </div>
         
         <!-- Main Content -->
         <div class="content">
             <div class="section">
                 <h2>🚀 Introduction</h2>
-                <p>MOLE is a framework that leverages Large Language Models (LLMs) to automatically extract metadata attributes from scientific papers covering datasets of languages other than Arabic. Our schema-driven methodology processes entire documents across multiple input formats and incorporates robust validation mechanisms for consistent output.</p>
-                <img src="../images/pipeline.png" width = "100%" />
+                <p>MeXtract is a set of light-weight models for metadata extraction from scientific papers. The models were created by finetuning 0.5B, 1.5B, and 3B versions of Qwen2.5. The SFT stage was followed by a preference optimization stage. We evaluate the models on the MOLE+ benchmark, and we achieve state-of-the-art results with repsect similar models in the literature. </p>
+                <!-- <img src="../images/pipeline.png" width = "100%" /> -->
             </div>
             
             <div class="section">
@@ -266,15 +266,10 @@
                 <p>Here is an example of extracted metadata from a given sample paper. Note this example is smilplified, the actual paper is more complex and contain more pages. </p>
                 <iframe src="demo.html" style="width: 100%; height: 600px; border: none; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></iframe>
             </div>
-
-            <div class="section">
-                <h2>📹 Demo</h2>
-                <p>You can find the demo on this <a href="https://moleform-production.up.railway.app/" target="_blank">link</a> to run inference on a given paper.</p>
-            </div>
             
             <div class="section">
-                <h2>📚 Dataset</h2>
-                <p>We manually annotated 52 papers. We split it 6 for validation and 46 for testing. The datasets covered span Arabic, English, Japanese, French, Russian, and multi-lingual datasets. The dataset is available on <a href="https://huggingface.co/datasets/IVUL-KAUST/MOLE" target="_blank">Hugging Face 🤗</a>.</p>
+                <h2>📚 Models</h2>
+                <p>We finetune 3 different size models for metadata extraction. You can find the models on <a href="https://huggingface.co/collections/IVUL-KAUST/mextract-68e63fb946b06f5031d4e3ef" target="_blank">Hugging Face 🤗</a>.</p>
             </div>
             <div class="section">
                 <h2>📊 Results</h2>
@@ -437,16 +432,16 @@
             };
             
             updateTemplate({
-                title: "MOLE: Metadata Extraction and Validation in Scientific Papers using LLMs",
+                title: "MeXtract: Light-Weight Metadata Extraction from Scientific Papers",
                 authors: [
                     { name: "Zaid Alyafeai", affiliation: "KAUST" },
                     { name: "Maged S. AlShaibani", affiliation: "SDAIA-KFUPM Joint Research Center for AI, KFUPM" },
                     { name: "Bernard Ghanem", affiliation: "KAUST" }
                 ],
                 links: {
-                    arxiv: "https://arxiv.org/pdf/2505.19800",
-                    github: "https://github.com/IVUL-KAUST/MOLE",
-                    huggingface: "https://huggingface.co/datasets/IVUL-KAUST/MOLE"
+                    arxiv: "",
+                    github: "https://github.com/IVUL-KAUST/MeXtract",
+                    huggingface: "https://huggingface.co/collections/IVUL-KAUST/mextract-68e63fb946b06f5031d4e3ef"
                 }
             });
         });
