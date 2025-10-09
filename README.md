@@ -106,3 +106,15 @@ print(metadata)
 
 ## {'Name': 'Zaid', 'Hobbies': ['Swimming'], 'Age': 25, 'Married': True}
 ```
+## Citation
+```
+@misc{mextract,
+      title={MeXtract: Light-Weight Metadata Extraction from Scientific Papers}, 
+      author={Zaid Alyafeai and Maged S. Al-Shaibani and Bernard Ghanem},
+      year={2025},
+      eprint={2510.06889},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.06889}, 
+}
+```
