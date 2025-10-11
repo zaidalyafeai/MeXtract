@@ -293,8 +293,14 @@ def extract_paper_text(path, format = "pdf_plumber", use_cached_docling=True, lo
 
     return paper_text
 
-def download_paper(paper_link, download_path="static/papers/", log = True):
-    if "arxiv" in paper_link:
+def download_paper(paper_link, paper_pdf = None, download_path="static/papers/", log = True):
+    if paper_pdf is not None:
+        paper_path = os.path.join(download_path, create_hash(paper_pdf.filename))
+        os.makedirs(os.path.dirname(paper_path), exist_ok=True)
+        with open(os.path.join(download_path, 'paper.pdf'), "wb") as f:
+            f.write(paper_pdf.file.read())
+        return True, paper_path
+    elif "arxiv" in paper_link:
         downloader = ArxivSourceDownloader(download_path=download_path, log= log)
         success, paper_path = downloader.download_paper(paper_link)
     elif "acl" in paper_link:
@@ -349,19 +355,27 @@ def get_critical_args(paper_link, args):
     return [args.model_name, args.browse_web, args.schema_name, args.few_shot, args.context, args.format, args.backend, args.max_model_len, args.max_output_len, paper_link, args.version]
 
 def run(
-    paper_link,
-    args
+    paper_link = None,
+    paper_pdf = None,
+    args = None
 ):
     logger = TextLogger(log = args.log)
     paper_extra_args = {
         "title": args.title,
         "abstract": args.abstract,
     }
-    logger.show_info(f"🔍 Running on {paper_link}")
+    if paper_pdf is not None:
+        logger.show_info(f"🔍 Running on paper pdf")
+        # save the paper pdf to the papers folder
+        success, paper_path = download_paper(paper_link, paper_pdf, log = args.log)
+        paper_link = paper_pdf.filename
+    else:
+        logger.show_info(f"🔍 Running on paper link {paper_link}")
+        success, paper_path = download_paper(paper_link, log = args.log)
+    
     model_results = {}
     schema = get_schema(args.schema_name)
     
-    success, paper_path = download_paper(paper_link, log = args.log)
     if not success:
         logger.show_warning(f"Failed to download paper: {paper_link}")
         return model_results

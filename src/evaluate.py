@@ -22,6 +22,7 @@ async def main(args):
             # Run the synchronous function in a thread
             task = loop.run_in_executor(executor, run,
                 data['Paper_Link'],
+                None,
                 args
             )
             tasks.append(task)
