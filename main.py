@@ -13,11 +13,6 @@ app = FastAPI()
 
 @app.post("/run")
 async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadFile = File(None)):
-    if file != None:
-        pdf_content = file.file
-    else:
-        pdf_content = None
-
     browse_web = False
     model_name = 'moonshotai/kimi-k2'
 
@@ -26,7 +21,8 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
     _args.model_name = model_name
     _args.schema_name = schema_name
     _args.format = 'pdf_plumber'
-    results = run(link, _args)
+    _args.overwrite = True
+    results = run(link, file, _args)
     
     # print(results)
     # results = json.load(open('/Users/zaidalyafeai/Documents/Development/masader_bot/static/results_latex/1410.3791/zero_shot/google_gemma-3-27b-it-browsing-results.json'))
