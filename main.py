@@ -22,6 +22,7 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
     _args.schema_name = schema_name
     _args.format = 'pdf_plumber'
     _args.overwrite = True
+    _args.log = True
     results = run(link, file, _args)
     
     # print(results)
