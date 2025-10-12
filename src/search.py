@@ -302,8 +302,8 @@ def extract_paper_text(path, format = "pdf_plumber", use_cached_docling=True, lo
 def download_paper(paper_link, paper_pdf = None, download_path="static/papers/", log = True):
     if paper_pdf is not None:
         paper_path = os.path.join(download_path, create_hash(paper_pdf.filename))
-        os.makedirs(os.path.dirname(paper_path), exist_ok=True)
-        with open(os.path.join(download_path, 'paper.pdf'), "wb") as f:
+        os.makedirs(paper_path, exist_ok=True)
+        with open(os.path.join(paper_path, 'paper.pdf'), "wb") as f:
             f.write(paper_pdf.file.read())
         return True, paper_path
     elif "arxiv" in paper_link:
