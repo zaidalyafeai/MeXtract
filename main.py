@@ -27,8 +27,10 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
     
     # print(results)
     # results = json.load(open('/Users/zaidalyafeai/Documents/Development/masader_bot/static/results_latex/1410.3791/zero_shot/google_gemma-3-27b-it-browsing-results.json'))
-    print(results[model_name]['metadata'])
-    return {'model_name': model_name, 'metadata': results[model_name]['metadata']}
+    metadata = results[model_name]['metadata']
+    metadata['Added_By'] = model_name
+    print(metadata)
+    return {'model_name': model_name, 'metadata': metadata}
 
 @app.post("/schema")
 async def func(name: str =  Form('')):
@@ -38,5 +40,12 @@ async def func(name: str =  Form('')):
         if '**' in line:
             key = line.strip().split('**')[1].replace(' ', '_')
             schema_dict[key]['description'] = line.strip().split('**')[-1].strip().capitalize()
-    return {key: schema_dict[key] for key in keys_order}
+    schema_dict = {key: schema_dict[key] for key in keys_order}
+    schema_dict ['Added_By'] = {
+        "answer_type": "str",
+        "answer_min": 1,
+        "answer_max": 1,
+        "description": "Your full name"
+    }
+    return schema_dict
     
