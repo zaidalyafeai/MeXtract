@@ -40,12 +40,11 @@ async def func(name: str =  Form('')):
         if '**' in line:
             key = line.strip().split('**')[1].replace(' ', '_')
             schema_dict[key]['description'] = line.strip().split('**')[-1].strip().capitalize()
-    schema_dict = {key: schema_dict[key] for key in keys_order}
     schema_dict ['Added_By'] = {
         "answer_type": "str",
         "answer_min": 1,
         "answer_max": 1,
         "description": "Your full name"
     }
-    return schema_dict
+    return {key: schema_dict[key] for key in keys_order}
     
