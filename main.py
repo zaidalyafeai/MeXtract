@@ -32,8 +32,11 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
 
 @app.post("/schema")
 async def func(name: str =  Form('')):
-
     schema = get_schema(name)
     schema_dict = json.loads(schema.schema())
+    for line in open('GUIDELINES.md', 'r').readlines():
+        if '**' in line:
+            key = line.strip().split('**')[1].replace(' ', '_')
+            schema_dict[key]['description'] = line.strip().split('**')[-1].strip().capitalize()
     return {key: schema_dict[key] for key in keys_order}
     
