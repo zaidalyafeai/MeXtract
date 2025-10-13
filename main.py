@@ -27,13 +27,21 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
     
     # print(results)
     # results = json.load(open('/Users/zaidalyafeai/Documents/Development/masader_bot/static/results_latex/1410.3791/zero_shot/google_gemma-3-27b-it-browsing-results.json'))
-    print(results[model_name]['metadata'])
-    return {'model_name': model_name, 'metadata': results[model_name]['metadata']}
+    metadata = results[model_name]['metadata']
+    metadata['Added_By'] = model_name
+    print(metadata)
+    return {'model_name': model_name, 'metadata': metadata}
 
 @app.post("/schema")
 async def func(name: str =  Form('')):
 
     schema = get_schema(name)
     schema_dict = json.loads(schema.schema())
-    return {key: schema_dict[key] for key in keys_order}
+    schema_dict = {key: schema_dict[key] for key in keys_order}
+    schema_dict ['Added_By'] = {
+        "answer_type": "str",
+        "answer_min": 1,
+        "answer_max": 1,
+    }
+    return schema_dict
     
