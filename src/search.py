@@ -259,7 +259,14 @@ def extract_paper_text(path, format = "pdf_plumber", use_cached_docling=True, lo
                 with pdfplumber.open(source_file) as pdf:
                     text_pages = []
                     for page in pdf.pages:
-                        text_pages.append(page.extract_text())
+                        try:
+                            page_text = page.extract_text()
+                            if page_text:
+                                text_pages.append(page_text)
+                        except (TypeError, AttributeError) as e:
+                            # Handle PSLiteral and other PDF parsing errors
+                            logger.show_warning(f"⚠️ Skipping page due to error: {str(e)}")
+                            continue
                     paper_text += " ".join(text_pages)
             elif format == "pdf_docling":
                 # If we need to extract (either no existing file or reading failed)
