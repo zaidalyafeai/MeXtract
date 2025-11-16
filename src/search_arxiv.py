@@ -240,7 +240,8 @@ class ArxivSourceDownloader:
         if download_pdf:
             if os.path.exists(os.path.join(paper_dir, f"paper.pdf")):
                 return True, paper_dir
-            pdf_url = self._get_pdf_url(paper_id)
+            # pdf_url = self._get_pdf_url(paper_id)
+            pdf_url = f"https://arxiv.org/pdf/{paper_id}.pdf"
             if pdf_url:
                 pdf_path = os.path.join(paper_dir, f"paper.pdf")
                 if os.path.exists(pdf_path):
