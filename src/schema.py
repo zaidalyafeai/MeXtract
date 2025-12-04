@@ -20,7 +20,7 @@ licenses = ['Apache-1.0', 'Apache-2.0', 'Non Commercial Use - ELRA END USER', 'B
 form = ['text', 'audio', 'images', 'videos'] 
 ethical_risks = ['Low', 'Medium', 'High']
 access = ['Free', 'Upon-Request', 'With-Fee']
-venue_types = ['preprint', 'workshop', 'conference', 'journal']
+venue_types = ['preprint', 'workshop', 'conference', 'journal', 'other']
 
 class Schema(BaseModel):
     model_config = ConfigDict(extra='forbid', strict=False)
