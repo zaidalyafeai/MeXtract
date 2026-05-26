@@ -6,7 +6,8 @@ from search import run
 from schema import get_schema
 import arg_utils
 import json
-
+from dotenv import load_dotenv
+load_dotenv()
 keys_order = ["Name", "Subsets", "HF_Link", "Link", "License", "Year", "Language", "Dialect", "Domain", "Form", "Collection_Style", "Description", "Volume", "Unit", "Ethical_Risks", "Provider", "Derived_From", "Paper_Title", "Paper_Link", "Script", "Tokenized", "Host", "Access", "Cost", "Test_Split", "Tasks", "Venue_Title", "Venue_Type", "Venue_Name", "Authors", "Affiliations", "Abstract", "Added_By"]
 
 app = FastAPI()
@@ -14,7 +15,7 @@ app = FastAPI()
 @app.post("/run")
 async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadFile = File(None)):
     browse_web = False
-    model_name = 'moonshotai/kimi-k2'
+    model_name = os.environ['MODEL_NAME']
 
     # Call your processing function with the file content and link
     _args = arg_utils.args
