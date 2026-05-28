@@ -15,9 +15,8 @@ keys_order = ["Name", "Subsets", "HF_Link", "Link", "License", "Year", "Language
 app = FastAPI()
 
 @app.post("/run")
-async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadFile = File(None)):
+async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadFile = File(None), model_name: str = Form('')):
     browse_web = False
-    model_name = os.environ['MODEL_NAME']
 
     # Call your processing function with the file content and link
     _args = arg_utils.args
