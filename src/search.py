@@ -306,7 +306,7 @@ def extract_paper_text(path, format = "pdf_plumber", use_cached_docling=True, lo
 
     return paper_text
 
-def download_paper(paper_link, paper_pdf = None, download_path="static/papers/", log = True):
+def download_paper(paper_link, paper_pdf = None, download_path="static/papers/", log = True, format = "pdf_plumber"):
     if paper_pdf is not None:
         paper_path = os.path.join(download_path, create_hash(paper_pdf.filename))
         os.makedirs(paper_path, exist_ok=True)
@@ -315,7 +315,8 @@ def download_paper(paper_link, paper_pdf = None, download_path="static/papers/",
         return True, paper_path
     elif "arxiv" in paper_link:
         downloader = ArxivSourceDownloader(download_path=download_path, log= log)
-        success, paper_path = downloader.download_paper(paper_link)
+        download_source = format == "tex"
+        success, paper_path = downloader.download_paper(paper_link, download_source=download_source)
     elif "acl" in paper_link:
         # download the paper from acl anthology
         downloader = ACLDownloader(download_path=download_path, log= log)
@@ -380,11 +381,11 @@ def run(
     if paper_pdf is not None:
         logger.show_info(f"🔍 Running on paper pdf")
         # save the paper pdf to the papers folder
-        success, paper_path = download_paper(paper_link, paper_pdf, log = args.log)
+        success, paper_path = download_paper(paper_link, paper_pdf, log = args.log, format=args.format)
         paper_link = paper_pdf.filename
     else:
         logger.show_info(f"🔍 Running on paper link {paper_link}")
-        success, paper_path = download_paper(paper_link, log = args.log)
+        success, paper_path = download_paper(paper_link, log = args.log, format=args.format)
     
     model_results = {}
     schema = get_schema(args.schema_name)

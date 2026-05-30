@@ -205,15 +205,13 @@ class ArxivSourceDownloader:
         """
         try:
             file_type = self._detect_file_type(file_path)
-            # self.logger.info(f"Detected file type: {file_type}")
-            
-            self._save_direct(file_path, extract_path, file_type)
-            
+
             if file_type == 'gzip':
                 return self._handle_gzip(file_path, extract_path)
             elif file_type == 'tar':
                 return self._handle_tar(file_path, extract_path)
-                
+            return self._save_direct(file_path, extract_path, file_type)
+
         except Exception as e:
             self.logger.error(f"Error processing source file: {e}")
             return False

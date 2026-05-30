@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, Form # type: ignore
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException # type: ignore
 # add absolute path from src 
 import sys
 sys.path.append('src')
@@ -26,9 +26,13 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
     _args.overwrite = True
     _args.log = True
     results = run(link, file, _args)
-    
-    # print(results)
-    # results = json.load(open('/Users/zaidalyafeai/Documents/Development/masader_bot/static/results_latex/1410.3791/zero_shot/google_gemma-3-27b-it-browsing-results.json'))
+
+    if model_name not in results or "metadata" not in results.get(model_name, {}):
+        raise HTTPException(
+            status_code=422,
+            detail="Failed to process paper. Check that the link is valid and the paper could be downloaded.",
+        )
+
     metadata = results[model_name]['metadata']
     metadata['Added_By'] = model_name
     print(metadata)
