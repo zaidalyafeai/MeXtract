@@ -140,29 +140,79 @@ class ArxivSourceDownloader:
             self.logger.error(f"Error saving file: {e}")
             return False
 
-    def _download_file(self, url: str, output_path: str) -> bool:
+    @staticmethod
+    def _is_valid_pdf(file_path: str) -> bool:
+        """Check that a file on disk is a complete, parseable PDF.
+
+        arXiv occasionally throttles datacenter IPs and drops the connection
+        mid-stream, leaving a truncated file. Such a file still starts with
+        ``%PDF`` but is missing the ``%%EOF`` trailer, which makes pdfplumber
+        fail with "Unexpected EOF". We validate both the header and trailer.
         """
-        Download a file from URL to specified path.
-        
+        try:
+            if os.path.getsize(file_path) < 1024:
+                return False
+            with open(file_path, "rb") as f:
+                if f.read(5) != b"%PDF-":
+                    return False
+                # Read the tail and look for the EOF marker.
+                f.seek(max(0, os.path.getsize(file_path) - 2048))
+                return b"%%EOF" in f.read()
+        except OSError:
+            return False
+
+    def _download_file(self, url: str, output_path: str, max_retries: int = 3) -> bool:
+        """
+        Download a file from URL to specified path, validating the result.
+
         Args:
             url (str): URL to download from
             output_path (str): Path to save the file
-            
+            max_retries (int): How many times to retry on a truncated/invalid download
+
         Returns:
-            bool: True if download successful
+            bool: True if a complete, valid PDF was downloaded
         """
-        try:
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
-            
-            with open(output_path, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f.write(chunk)
-            return True
-            
-        except Exception as e:
-            self.logger.error(f"Error downloading file from {url}: {e}")
-            return False
+        headers = {
+            "User-Agent": (
+                "MeXtract/1.0 (metadata extraction bot; "
+                "+https://github.com/IVUL-KAUST/MOLE)"
+            )
+        }
+        for attempt in range(1, max_retries + 1):
+            try:
+                response = requests.get(url, stream=True, headers=headers, timeout=120)
+                response.raise_for_status()
+
+                expected = response.headers.get("content-length")
+                with open(output_path, "wb") as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        f.write(chunk)
+
+                written = os.path.getsize(output_path)
+                if expected is not None and written < int(expected):
+                    self.logger.show_warning(
+                        f"Truncated download from {url} "
+                        f"({written}/{expected} bytes), attempt {attempt}/{max_retries}"
+                    )
+                    continue
+                if not self._is_valid_pdf(output_path):
+                    self.logger.show_warning(
+                        f"Downloaded file from {url} is not a valid/complete PDF, "
+                        f"attempt {attempt}/{max_retries}"
+                    )
+                    continue
+                return True
+
+            except Exception as e:
+                self.logger.show_warning(
+                    f"Error downloading file from {url}: {e} "
+                    f"(attempt {attempt}/{max_retries})"
+                )
+
+        if os.path.exists(output_path):
+            os.remove(output_path)
+        return False
 
     def _download_source(self, url: str, paper_dir: str) -> Optional[str]:
         """Download source files from URL."""
@@ -236,24 +286,24 @@ class ArxivSourceDownloader:
         success = True
         
         if download_pdf:
-            if os.path.exists(os.path.join(paper_dir, f"paper.pdf")):
+            pdf_path = os.path.join(paper_dir, "paper.pdf")
+            # Only reuse a cached PDF if it is actually a complete, valid file.
+            # A previously truncated download must not be served from cache.
+            if os.path.exists(pdf_path) and self._is_valid_pdf(pdf_path):
+                self.logger.show_info(f"📄 PDF already exists at {paper_dir}")
                 return True, paper_dir
+            if os.path.exists(pdf_path):
+                self.logger.show_warning(
+                    f"Cached PDF at {pdf_path} is invalid/truncated; re-downloading"
+                )
+                os.remove(pdf_path)
             # pdf_url = self._get_pdf_url(paper_id)
             pdf_url = f"https://arxiv.org/pdf/{paper_id}.pdf"
-            if pdf_url:
-                pdf_path = os.path.join(paper_dir, f"paper.pdf")
-                if os.path.exists(pdf_path):
-                    self.logger.show_info(f"📄 PDF already exists at {paper_dir}")
-                    success = True
-                else:
-                    pdf_success = self._download_file(pdf_url, pdf_path)
-                    if pdf_success:
-                        self.logger.show_info(f"📄 PDF downloaded successfully to {paper_dir}")
-                    else:
-                        self.logger.show_warning("Failed to download PDF")
-                        success = False
+            pdf_success = self._download_file(pdf_url, pdf_path)
+            if pdf_success:
+                self.logger.show_info(f"📄 PDF downloaded successfully to {paper_dir}")
             else:
-                self.logger.show_warning("PDF URL not found")
+                self.logger.show_warning("Failed to download PDF")
                 success = False
         
         if download_source:
