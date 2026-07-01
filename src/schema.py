@@ -6,14 +6,15 @@ import json
 from type_classes import *
 from glob import glob
 
-units = ['tokens', 'sentences', 'documents', 'images', 'videos', 'hours']
+units = ['tokens', 'sentences', 'documents', 'conversations', 'images', 'videos', 'hours']
 dialects = ['Classical Arabic','Modern Standard Arabic','United Arab Emirates','Bahrain','Djibouti','Algeria','Egypt','Iraq','Jordan','Comoros','Kuwait','Lebanon','Libya','Morocco','Mauritania','Oman','Palestine','Qatar','Saudi Arabia','Sudan','Somalia','South Sudan','Syria','Tunisia','Yemen','Levant','North Africa','Gulf','mixed']
 languages = ['Arabic', 'English', 'French', 'Spanish', 'German', 'Greek', 'Bulgarian', 'Russian', 'Turkish', 'Vietnamese', 'Thai', 'Chinese', 'Simplified Chinese', 'Hindi', 'Swahili', 'Urdu', 'Bengali', 'Finnish', 'Japanese', 'Korean', 'Telugu', 'Indonesian', 'Italian', 'Polish', 'Portuguese', 'Estonian', 'Haitian Creole', 'Eastern Apur\u00edmac Quechua', 'Tamil', 'Sinhala']
-tasks = ['machine translation','speech recognition','sentiment analysis','language modeling','topic classification','dialect identification','text generation','cross-lingual information retrieval','named entity recognition','question answering','multiple choice question answering','information retrieval','part of speech tagging','language identification','summarization','speaker identification','transliteration','morphological analysis','offensive language detection','review classification','gender identification','fake news detection','dependency parsing','irony detection','meter classification','natural language inference','instruction tuning','linguistic acceptability','commonsense reasoning','word prediction','image captioning','word similarity','grammatical error correction','sign language recognition','optical character recognition','fill-in-the blank','relation extraction','stance detection','emotion classification','semantic parsing','lexicon analysis','embedding evaluation','codeswitch detection','tokenization','financial analysis','commonsense validation','intent detection','dictionary','plagiarism detection','safety evaluation','keyphrase extraction','emotion detection','math solving','punctuation detection','text simplification','handwriting recognition','misspelling detection','misogyny identification','sarcasm detection','debate analysis','linking','dialogue generation','scene text detection','coreference resolution','text classification','toxicity detection','fact checking','misinformation detection','word sense disambiguation','troll detection','entity retrieval','semantic role labeling','syntactic parsing','semantic similarity','grammatical analysis','hate speech detection','crisis detection','event detection','stemming','lemmatization','title generation','paraphrase identification','entailment','text to speech','speech act classification','answer grading','stop words','author profiling','authorship attribution','text-to-SQL generation','readability assessment','answerable questions identification','poetry analysis','information extraction','spam detection','diacritization','hallucination detection','deepfake detection','instruction following','multimodal evaluation','preference optimization','gender bias detection','bias detection','code generation','humor detection','AI-generated text detection','video generation','answerable questions detection','propaganda detection','retrieval-augmented generation','LLM judge evaluation','spoken language modeling','table to text','disease identification','agentic AI evaluation','knowledge graphs','visual question answering','educational value of web documents','event linking','hashtag prediction','document type classification','spoken term detection','function calling','other']
-hosts = ['GitHub', 'CodaLab', 'GitLab', 'Dropbox', 'Gdrive', 'LDC', 'MPDI', 'Mendeley Data', 'OneDrive', 'QCRI Resources', 'sourceforge', 'zenodo', 'HuggingFace', 'ELRA', 'CAMeL Resources', 'kaggle', 'other']
-domains = ['social media', 'news articles', 'reviews', 'commentary', 'books', 'wikipedia', 'web pages', 'public datasets', 'TV channels', 'captions', 'LLM', 'telephone conversations', 'other']
-collection_styles = ['crawling', 'human annotation', 'machine annotation', 'manual curation', 'LLM generated', 'other']
-licenses = ['Apache-1.0','Apache-2.0','Non Commercial Use - ELRA END USER','BSD','CC BY 1.0','CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0','CC BY 4.0','CC BY-NC 1.0','CC BY-NC 2.0','CC BY-NC 3.0','CC BY-NC 4.0','CC BY-NC-ND 1.0','CC BY-NC-ND 2.0','CC BY-NC-ND 3.0','CC BY-NC-ND 4.0','CC BY-SA 1.0','CC BY-SA 2.0','CC BY-SA 3.0','CC BY-SA 4.0','CC BY-NC 1.0','CC BY-NC 2.0','CC BY-NC 3.0','CC BY-NC-SA 1.0','CC BY-NC-SA 2.0','CC BY-NC-SA 3.0','CC BY-NC-SA 4.0','CC0','CDLA-Permissive-1.0','CDLA-Permissive-2.0','GPL-1.0','GPL-2.0','GPL-3.0','LDC User Agreement','LGPL-2.0','LGPL-3.0','MIT License','ODbl-1.0','MPL-1.0','MPL-2.0','ODC-By','AFL-3.0','CDLA-SHARING-1.0','BigScience RAIL License','DbCL','unknown','custom']
+tasks = ['machine translation','speech recognition','sentiment analysis','language modeling','topic classification','dialect identification','text generation','cross-lingual information retrieval','named entity recognition','question answering','multiple choice question answering','information retrieval','part of speech tagging','language identification','summarization','speaker identification','transliteration','morphological analysis','offensive language detection','review classification','gender identification','fake news detection','dependency parsing','irony detection','meter classification','natural language inference','instruction tuning','linguistic acceptability','commonsense reasoning','word prediction','image captioning','word similarity','grammatical error correction','sign language recognition','optical character recognition','fill-in-the blank','relation extraction','stance detection','emotion classification','semantic parsing','lexicon analysis','embedding evaluation','codeswitch detection','tokenization','financial analysis','commonsense validation','intent detection','dictionary','plagiarism detection','safety evaluation','keyphrase extraction','emotion detection','math solving','punctuation detection','text simplification','handwriting recognition','misspelling detection','misogyny identification','sarcasm detection','debate analysis','linking','dialogue generation','scene text detection','coreference resolution','text classification','toxicity detection','fact checking','misinformation detection','word sense disambiguation','troll detection','entity retrieval','semantic role labeling','syntactic parsing','semantic similarity','grammatical analysis','hate speech detection','crisis detection','event detection','stemming','lemmatization','title generation','paraphrase identification','entailment','text to speech','speech act classification','answer grading','stop words','author profiling','authorship attribution','text-to-SQL generation','readability assessment','answerable questions identification','poetry analysis','information extraction','spam detection','diacritization','hallucination detection','deepfake detection','instruction following','multimodal evaluation','preference optimization','gender bias detection','bias detection','code generation','humor detection','AI-generated text detection','video generation','answerable questions detection','propaganda detection','retrieval-augmented generation','LLM judge evaluation','spoken language modeling','table to text','disease identification','agentic AI evaluation','knowledge graphs','visual question answering','educational value of web documents','event linking','hashtag prediction','document type classification','spoken term detection','function calling','mental health detection','knowledge editing','multiword expression identification','other']
+hosts = ['GitHub', 'GitLab', 'CodaLab', 'data.world', 'Dropbox', 'Gdrive', 'LDC', 'MPDI', 'Mendeley Data', 'Mozilla', 'OneDrive', 'QCRI Resources', 'ResearchGate', 'sourceforge', 'zenodo', 'HuggingFace', 'ELRA', 'kaggle', 'CAMeL Resources', 'other']
+sources = ['social media', 'news articles', 'reviews', 'commentary', 'books', 'wikipedia', 'web pages', 'public datasets', 'TV channels', 'captions', 'LLM', 'telephone conversations', 'studio recordings', 'subtitles', 'treebanks', 'web crawls', 'manual construction', 'other']
+domains = ['religion', 'health', 'news', 'education', 'science', 'literature', 'finance', 'law', 'politics', 'culture', 'society', 'crisis', 'sports', 'economics', 'technology', 'art', 'general', 'poetry', 'history']
+annotation_styles = ['human annotation', 'machine annotation', 'LLM annotation', 'metadata-derived', 'inherited annotation', 'none', 'other']
+licenses = ['Apache-1.0','Apache-2.0','Non Commercial Use - ELRA END USER','BSD','CC BY 1.0','CC BY 2.0','CC BY 3.0','CC BY 4.0','CC BY-NC 1.0','CC BY-NC 2.0','CC BY-NC 3.0','CC BY-NC 4.0','CC BY-NC-ND 1.0','CC BY-NC-ND 2.0','CC BY-NC-ND 3.0','CC BY-NC-ND 4.0','CC BY-SA 1.0','CC BY-SA 2.0','CC BY-SA 3.0','CC BY-SA 4.0','CC BY-NC 1.0','CC BY-NC 2.0','CC BY-NC 3.0','CC BY-NC-SA 1.0','CC BY-NC-SA 2.0','CC BY-NC-SA 3.0','CC BY-NC-SA 4.0','CC BY-NC 4.0','CC0','CC BY 2.5','CDLA-Permissive-1.0','CDLA-Permissive-2.0','GPL-1.0','GPL-2.0','GPL-3.0','LDC User Agreement','LGPL-2.0','LGPL-3.0','MIT License','ODbl-1.0','MPL-1.0','MPL-2.0','ODC-By','AFL-3.0','CDLA-SHARING-1.0','BigScience RAIL License','DbCL','unknown','custom']
 form = ['text', 'audio', 'images', 'videos'] 
 ethical_risks = ['Low', 'Medium', 'High']
 access = ['Free', 'Upon-Request', 'With-Fee']
@@ -424,20 +425,22 @@ class Dataset(Subset):
     Link: Field(URL, 0, 1)
     HF_Link: Field(URL, 0, 1)
     Year: Field(Year, 1900, 2025)
-    Domain: Field(List[Str], 1, len(domains), domains)
+    Source: Field(List[Str], 1, 17, sources)
     Form: Field(Str, 1, 1, form)
-    Collection_Style: Field(List[Str], 1, len(collection_styles), collection_styles)
+    Domain: Field(List[Str], 1, 13, domains)
+    Annotation_Style: Field(List[Str], 1, 5, annotation_styles)
     Description: Field(LongStr, 0, 50)
     Ethical_Risks: Field(Str, 1, 1, ethical_risks)
     Provider: Field(List[Str], 0, 10)
     Derived_From: Field(List[Str], 0, 10)
+    Partial: Field(Bool, 1, 1)
     Paper_Title: Field(LongStr, 1, 100)
     Paper_Link: Field(URL, 1, 1)
     Tokenized: Field(Bool, 1, 1)
     Host: Field(Str, 1, 1, hosts)
     Access: Field(Str, 1, 1, access)
     Cost: Field(Str, 0, 1)
-    Test_Split: Field(Bool, 1, 1)
+    Has_Splits: Field(Bool, 1, 1)
     Tasks: Field(List[Str], 1, 5, tasks)
     Venue_Title: Field(Str, 1, 1)
     Venue_Type: Field(Str, 1, 1, venue_types)
@@ -448,7 +451,7 @@ class Dataset(Subset):
 
 
 class ArSchema(Dataset):
-    Subsets: Field(List[ArSubset], 0, len(dialects))
+    Dialect_Subsets: Field(List[ArSubset], 0, len(dialects))
     Dialect: Field(Str, 1, 1, dialects)
     Language: Field(Str, 1, 1, ['ar', 'multilingual'])
     Script: Field(Str, 1, 1, ['Arab', 'Latin', 'Arab-Latin'])
