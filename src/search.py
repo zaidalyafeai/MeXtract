@@ -22,31 +22,43 @@ from utils import create_chat_completion
 
 load_dotenv()
 
-def get_cost(message):
-    import requests
-    while True:
-        # Replace with your actual headers dictionary
-        headers = {
-            "Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}"
-        }  # Add your authorization and other headers here
-        
-        # Make the request to get generation status by ID
-        generation_response = requests.get(
-            f'https://openrouter.ai/api/v1/generation?id={message.id}',
-            headers=headers
-        ).json()
-        # Parse the JSON response
-        if "data" not in generation_response:
-            time.sleep(1)
-            continue
-        stats = generation_response["data"]
+def get_cost(message, max_attempts=5, request_timeout=5):
+    """Fetch generation stats (cost/tokens) from OpenRouter.
 
-        # Now you can work with the stats data
+    This runs *after* the completion is already available, so it must never
+    block the response indefinitely. We bound both the per-request timeout and
+    the number of retries; if stats aren't ready in time we return zeros rather
+    than hanging the caller.
+    """
+    import requests
+    zero = {"cost": 0, "input_tokens": 0, "output_tokens": 0}
+    headers = {
+        "Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}"
+    }
+    for attempt in range(max_attempts):
+        try:
+            generation_response = requests.get(
+                f'https://openrouter.ai/api/v1/generation?id={message.id}',
+                headers=headers,
+                timeout=request_timeout,
+            ).json()
+        except requests.RequestException:
+            return zero
+
+        if "data" not in generation_response:
+            # Stats not populated yet; back off briefly and retry a few times.
+            if attempt < max_attempts - 1:
+                time.sleep(1)
+                continue
+            return zero
+
+        stats = generation_response["data"]
         return {
-            "cost": stats['total_cost'],
-            "input_tokens": stats['tokens_prompt'],
-            "output_tokens": stats['tokens_completion'],
+            "cost": stats.get('total_cost', 0),
+            "input_tokens": stats.get('tokens_prompt', 0),
+            "output_tokens": stats.get('tokens_completion', 0),
         }
+    return zero
 
 def get_input_tokens(messages, model_name):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -199,14 +211,13 @@ def get_metadata(
                         messages=messages,
                     )
         try:
-            if backend == "openrouter":
-                cost = get_cost(message)
-            else:
-                cost = {
-                    "cost": 0,
-                    "input_tokens": 0,
-                    "output_tokens": 0,
-                }
+            # NOTE: skipping OpenRouter cost lookup (get_cost) for speed; the
+            # extra /generation poll added latency after the completion returned.
+            cost = {
+                "cost": 0,
+                "input_tokens": 0,
+                "output_tokens": 0,
+            }
             response =  message.choices[0].message.content
             predictions = read_json(response)
         except json.JSONDecodeError as e:
@@ -225,7 +236,8 @@ def get_metadata(
             logger.show_warning(error)
             logger.show_warning(f"Failed to get predictions for {model_name}, retrying ...")
             # time.sleep(3)
-    time.sleep(timeout)
+    if timeout:
+        time.sleep(timeout)
     if predictions == {}:
         predictions = schema.generate_metadata(method = 'default').json()
     return message, predictions, cost, error
@@ -475,7 +487,7 @@ def run(
             cost = results["cost"]
         else:
             message, metadata, cost, error = get_metadata(
-                paper_text, args.model_name, schema_name=args.schema_name, few_shot = args.few_shot, backend = args.backend, max_model_len = args.max_model_len, max_output_len = args.max_output_len, version = args.version, log = args.log
+                paper_text, args.model_name, schema_name=args.schema_name, few_shot = args.few_shot, backend = args.backend, max_model_len = args.max_model_len, max_output_len = args.max_output_len, version = args.version, log = args.log, timeout = args.timeout
             )
         if args.browse_web:
             browsing_link = get_repo_link(
@@ -498,7 +510,8 @@ def run(
                     max_model_len = args.max_model_len,
                     max_output_len = args.max_output_len,
                     version = args.version,
-                    log = args.log
+                    log = args.log,
+                    timeout = args.timeout
                 )
                 cost = {
                     "cost": browsing_cost["cost"]
