@@ -8,6 +8,7 @@ import arg_utils
 import json
 from dotenv import load_dotenv
 import os
+from starlette.concurrency import run_in_threadpool
 
 load_dotenv()
 keys_order = ["Name", "Dialect_Subsets", "HF_Link", "Link", "License", "Year", "Language", "Dialect", "Source", "Domain", "Form", "Annotation_Style", "Description", "Volume", "Unit", "Ethical_Risks", "Provider", "Derived_From", "Paper_Title", "Paper_Link", "Script", "Tokenized", "Host", "Access", "Cost", "Has_Splits", "Partial", "Tasks", "Venue_Title", "Venue_Type", "Venue_Name", "Authors", "Affiliations", "Abstract", "Added_By"]
@@ -15,17 +16,20 @@ keys_order = ["Name", "Dialect_Subsets", "HF_Link", "Link", "License", "Year", "
 app = FastAPI()
 
 @app.post("/run")
-async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadFile = File(None), model_name: str = Form('')):
-    browse_web = False
-
-    # Call your processing function with the file content and link
-    _args = arg_utils.args
+async def run_extraction(link: str =  Form(''), schema_name: str = Form(''), file: UploadFile = File(None), model_name: str = Form('')):
+    # Build a fresh args object per request so concurrent requests don't clobber
+    # each other's settings on a shared global.
+    _args = arg_utils.Args(**arg_utils.get_default_args())
     _args.model_name = model_name
     _args.schema_name = schema_name
     _args.format = 'pdf_plumber'
     _args.overwrite = True
     _args.log = True
-    results = run(link, file, _args)
+
+    # `run` is a blocking, long-running function (PDF download/parse, LLM calls).
+    # Running it directly in this async endpoint would block the event loop and
+    # freeze every other request. Offload it to a worker thread instead.
+    results = await run_in_threadpool(run, link, file, _args)
 
     if model_name not in results or "metadata" not in results.get(model_name, {}):
         raise HTTPException(
@@ -39,7 +43,7 @@ async def func(link: str =  Form(''), schema_name: str = Form(''), file: UploadF
     return {'model_name': model_name, 'metadata': metadata}
 
 @app.post("/schema")
-async def func(name: str =  Form('')):
+async def get_schema_endpoint(name: str =  Form('')):
     schema = get_schema(name)
     schema_dict = json.loads(schema.schema())
     for line in open('GUIDELINES.md', 'r').readlines():

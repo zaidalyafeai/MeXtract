@@ -114,6 +114,7 @@ parser.add_argument(
 )
 # Parse arguments conditionally
 import sys
+import os
 
 def get_default_args():
     """Return default arguments as a dictionary"""
@@ -146,13 +147,19 @@ class Args:
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-# Check if we're in a FastAPI/web context (no command line args)
+# Detect whether we're running our own CLI scripts vs. being imported by a
+# server like uvicorn/gunicorn (which put their own args on sys.argv).
+_prog = os.path.basename(sys.argv[0]) if sys.argv else ""
+_is_web_server = any(name in _prog for name in ("uvicorn", "gunicorn", "hypercorn"))
+
 try:
-    # Try to parse args, but handle the case where there are no CLI args
-    if len(sys.argv) == 1:  # Only script name, no arguments
+    if len(sys.argv) == 1 or _is_web_server:
+        # No CLI args, or launched by a web server: use defaults and don't try
+        # to parse the server's arguments (that would raise an argparse error).
         args = Args(**get_default_args())
     else:
-        args = parser.parse_args()
+        # Ignore unknown args so an unrelated flag never crashes the import.
+        args, _ = parser.parse_known_args()
 except SystemExit:
     # argparse calls sys.exit() when there are issues, catch this for web contexts
     args = Args(**get_default_args())
