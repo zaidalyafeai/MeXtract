@@ -16,7 +16,6 @@ domains = ['religion', 'health', 'news', 'education', 'science', 'literature', '
 annotation_styles = ['human annotation', 'human validation', 'machine annotation', 'LLM annotation', 'metadata-derived', 'inherited annotation', 'none', 'other']
 licenses = ['Apache-1.0','Apache-2.0','Non Commercial Use - ELRA END USER','BSD','CC BY 1.0','CC BY 2.0','CC BY 3.0','CC BY 4.0','CC BY-NC 1.0','CC BY-NC 2.0','CC BY-NC 3.0','CC BY-NC 4.0','CC BY-NC-ND 1.0','CC BY-NC-ND 2.0','CC BY-NC-ND 3.0','CC BY-NC-ND 4.0','CC BY-SA 1.0','CC BY-SA 2.0','CC BY-SA 3.0','CC BY-SA 4.0','CC BY-NC 1.0','CC BY-NC 2.0','CC BY-NC 3.0','CC BY-NC-SA 1.0','CC BY-NC-SA 2.0','CC BY-NC-SA 3.0','CC BY-NC-SA 4.0','CC BY-NC 4.0','CC0','CC BY 2.5','CDLA-Permissive-1.0','CDLA-Permissive-2.0','GPL-1.0','GPL-2.0','GPL-3.0','LDC User Agreement','LGPL-2.0','LGPL-3.0','MIT License','ODbl-1.0','MPL-1.0','MPL-2.0','ODC-By','AFL-3.0','CDLA-SHARING-1.0','BigScience RAIL License','DbCL','unknown','custom']
 form = ['text', 'audio', 'images', 'videos'] 
-ethical_risks = ['Low', 'Medium', 'High']
 access = ['Free', 'Upon-Request', 'With-Fee']
 venue_types = ['preprint', 'workshop', 'conference', 'journal', 'other']
 
@@ -29,6 +28,7 @@ class Schema(BaseModel):
             metadata = metadata
         else:
             raise ValueError('Either path or metadata must be provided')
+        metadata.pop('Ethical_Risks', None)
         super().__init__(**metadata)
 
     @classmethod
@@ -214,7 +214,7 @@ class Schema(BaseModel):
     def compare_with(self, gold_metadata, return_metrics_only = False, return_precision_only = False):
         results = {}
         for key in gold_metadata.keys():
-            if key in ['annotations_from_paper']:
+            if key == 'annotations_from_paper' or key not in self.get_attributes():
                 continue
             try:
                 results[key] = self.match_attributes(key, gold_metadata[key], self.model_dump()[key])
@@ -225,7 +225,7 @@ class Schema(BaseModel):
         if return_precision_only:
             return {'precision': precision}
         annotations_from_paper = gold_metadata['annotations_from_paper']
-        annotated_attributes = [key for key in gold_metadata.keys() if key in annotations_from_paper and annotations_from_paper[key]]
+        annotated_attributes = [key for key in results if key in annotations_from_paper and annotations_from_paper[key]]
         recall = sum([value for key, value in results.items() if key in annotated_attributes]) / len(annotated_attributes)
         f1 = 2 * precision * recall / (precision + recall)
         length = self.evaluate_length()
@@ -430,7 +430,6 @@ class Dataset(Subset):
     Domain: Field(List[Str], 1, 13, domains)
     Annotation_Style: Field(List[Str], 1, 5, annotation_styles)
     Description: Field(LongStr, 0, 50)
-    Ethical_Risks: Field(Str, 1, 1, ethical_risks)
     Provider: Field(List[Str], 0, 10)
     Derived_From: Field(List[Str], 0, 10)
     Partial: Field(Bool, 1, 1)

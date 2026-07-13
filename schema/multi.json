@@ -218,23 +218,6 @@
         "answer_min": 1,
         "answer_max": 1
     },
-    "Ethical_Risks": {
-        "question": "What is the level of the ethical risks of the dataset?",
-        "options": [
-            "Low",
-            "Medium",
-            "High"
-        ],
-        "option_description": {
-            "Low": "most likely no ethical risks associated with this dataset",
-            "Medium": "social media datasets",
-            "High": "hate/offensive datasets from social media, or web pages"
-        },
-        "answer_type": "str",
-        "validation_group": "CONTENT",
-        "answer_min": 1,
-        "answer_max": 1
-    },
     "Provider": {
         "question": "What entity is the provider of the dataset? Don't use Team.",
         "answer_type": "List[str]",

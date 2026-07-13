@@ -11,7 +11,7 @@ import os
 from starlette.concurrency import run_in_threadpool
 
 load_dotenv()
-keys_order = ["Name", "Dialect_Subsets", "HF_Link", "Link", "License", "Year", "Language", "Dialect", "Source", "Domain", "Form", "Annotation_Style", "Description", "Volume", "Unit", "Ethical_Risks", "Provider", "Derived_From", "Paper_Title", "Paper_Link", "Script", "Tokenized", "Host", "Access", "Cost", "Has_Splits", "Partial", "Tasks", "Venue_Title", "Venue_Type", "Venue_Name", "Authors", "Affiliations", "Abstract", "Added_By"]
+keys_order = ["Name", "Dialect_Subsets", "HF_Link", "Link", "License", "Year", "Language", "Dialect", "Source", "Domain", "Form", "Annotation_Style", "Description", "Volume", "Unit", "Provider", "Derived_From", "Paper_Title", "Paper_Link", "Script", "Tokenized", "Host", "Access", "Cost", "Has_Splits", "Partial", "Tasks", "Venue_Title", "Venue_Type", "Venue_Name", "Authors", "Affiliations", "Abstract", "Added_By"]
 
 app = FastAPI()
 
@@ -57,4 +57,3 @@ async def get_schema_endpoint(name: str =  Form('')):
         "description": "Your full name"
     }
     return {key: schema_dict[key] for key in keys_order}
-    

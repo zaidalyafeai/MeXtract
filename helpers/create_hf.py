@@ -5,7 +5,7 @@ import json
 base_path = "evals"
 schemas = ["ar", "en", "jp", "ru", "fr", "multi"]
 dfs = []
-metadata = ['Name', 'Subsets', 'HF Link', 'Link', 'License', 'Year', 'Language', 'Dialect', 'Domain', 'Form', 'Collection Style', 'Description', 'Volume', 'Unit', 'Ethical Risks', 'Provider', 'Derived From', 'Paper Title', 'Paper Link', 'Script', 'Tokenized', 'Host', 'Access', 'Cost', 'Test Split', 'Tasks', 'Venue Title', 'Venue Type', 'Venue Name', 'Authors', 'Affiliations', 'Abstract']
+metadata = ['Name', 'Subsets', 'HF Link', 'Link', 'License', 'Year', 'Language', 'Dialect', 'Domain', 'Form', 'Collection Style', 'Description', 'Volume', 'Unit', 'Provider', 'Derived From', 'Paper Title', 'Paper Link', 'Script', 'Tokenized', 'Host', 'Access', 'Cost', 'Test Split', 'Tasks', 'Venue Title', 'Venue Type', 'Venue Name', 'Authors', 'Affiliations', 'Abstract']
 for schema in schemas:
     for split in ["valid", "test"]:
         for file in glob(f"{base_path}/{schema}/{split}/*.json"):
@@ -33,7 +33,6 @@ df = pd.concat(dfs, ignore_index=True)
 dataset = Dataset.from_pandas(df)
 
 dataset.push_to_hub("IVUL-KAUST/MOLE")
-
 
 
 

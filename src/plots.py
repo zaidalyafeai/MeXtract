@@ -160,9 +160,9 @@ def get_group():
     elif args.group_by_x == "attributes_hard":
         headers += ["Link","License", "HF_Link", "Volume", "Year", "Derived_From", "Host", "Domain", "Collection_Style"]
     elif args.group_by_x == "attributes":
-        headers += ["Link", "HF_Link", "License", "Language", "Domain", "Form", "Collection_Style", "Volume", "Unit", "Ethical_Risks", "Provider", "Derived_From", "Tokenized", "Host", "Access", "Cost", "Test_Split", "Tasks"]
+        headers += ["Link", "HF_Link", "License", "Language", "Domain", "Form", "Collection_Style", "Volume", "Unit", "Provider", "Derived_From", "Tokenized", "Host", "Access", "Cost", "Test_Split", "Tasks"]
     elif args.group_by_x == 'all':
-        headers += ["Link", "HF_Link", "License", "Language", "Domain", "Form", "Collection_Style", "Volume", "Unit", "Ethical_Risks", "Provider", "Derived_From", "Tokenized", "Host", "Access", "Cost", "Test_Split", "Tasks", "Venue_Title", "Venue_Type", "Venue Name", "Authors", "Affiliations", "Abstract"]
+        headers += ["Link", "HF_Link", "License", "Language", "Domain", "Form", "Collection_Style", "Volume", "Unit", "Provider", "Derived_From", "Tokenized", "Host", "Access", "Cost", "Test_Split", "Tasks", "Venue_Title", "Venue_Type", "Venue Name", "Authors", "Affiliations", "Abstract"]
     elif args.group_by_x == 'generative':
         headers += ["Name", "Description", "Abstract"]
     elif args.group_by_x == "metric":

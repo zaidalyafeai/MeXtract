@@ -321,7 +321,7 @@ We release the models <Access value='Free'>freely</Access> the code in GitHub (<
                     );
                     
                     // Handle split values (for Language attribute)
-                    if (replacement.keyword === "Language" || replacement.keyword === "Authors" || replacement.keyword === "Collection_Style" || replacement.keyword ==="Ethical Risks") {
+                    if (replacement.keyword === "Language" || replacement.keyword === "Authors" || replacement.keyword === "Collection_Style") {
                         const languages = replacement.value.split(',');
                         languages.forEach(lang => {
                             const trimmedLang = lang.trim();

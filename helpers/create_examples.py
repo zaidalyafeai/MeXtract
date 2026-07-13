@@ -165,7 +165,6 @@ for lang in ["en", "fr", "jp", "ru", "multi"]:
             "Description": f"{name} is a {task} dataset, that contains {volume} {unit}",
             "Volume": volume,
             "Unit": unit,
-            "Ethical Risks": "Low",
             "Provider": [provider],
             "Derived From": [],
             "Paper Title": f"{name}: A {task} dataset for {lang}",

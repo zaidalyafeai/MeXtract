@@ -15,22 +15,21 @@ For each attribute, you label the attribute and a binary value {0,1} to say if t
 13. **Description** a short description of the dataset.
 14. **Volume** The total samples for the dataset. If the dataset is multilingual, we use the total samples for the Arabic subset.
 15. **Unit** We use sentences if the dataset has short samples, even if there are multiple sentences. We use documents for datasets that have long documents, like language modelling, topic classification, etc.
-16. **Ethical Risks** "Low" "most likely no ethical risks associated with this dataset", "Medium" "social media datasets or web-extracted datasets", "High" "hate/offensive datasets from social media, or web pages".
-17. **Provider** The entity that created the dataset. If there are many affiliations, we can guess from the link or the funds/acknowledgments. Otherwise, list all affiliations.
-18. **Derived From** lists all the datasets that were used to create or derive the current dataset.
-19. **Paper Title** The title of the paper.
-20. **Paper Link** we use the direct link of the paper, for example, https//arxiv.org/pdf/2504.21677
-21. **Script** Script of the dataset. If there are transliteration or Arabizi, use Latin.
-22. **Tokenized** Is the dataset lemmatized or stemmed?
-23. **Host** The main repoistory that hosts the dataset.
-24. **Access** Free if the dataset is public. Upon Request, if the dataset is behind a form. With-Fee if the dataset is paid.
-25. **Cost** the cost of the dataset if paid.
-26. **Has Splits** True only if the dataset has (training and test splits). If the dataset has only one split, even if it is for testing, we set that to false.
-27. **Partial** True if the dataset is a partial release or a subset of a larger dataset.
-28. **Tasks** the list of tasks that this dataset is intended for. Use other if the task doesn’t exist in the options.
-29. **Venue Title** the title of the venue i.e. EMNLP, ACL, etc.
-30. **Venue Type** the veneue type.
-31. **Venue Name** the full name of the venue. for arXiv we don't use the full name.
-32. **Authors** the authors of the paper in an ordered fashion.
-33. **Affiliations** list only the affiliations without repetition
-34. **Abstract** the full abstract of the paper.
+16. **Provider** The entity that created the dataset. If there are many affiliations, we can guess from the link or the funds/acknowledgments. Otherwise, list all affiliations.
+17. **Derived From** lists all the datasets that were used to create or derive the current dataset.
+18. **Paper Title** The title of the paper.
+19. **Paper Link** we use the direct link of the paper, for example, https//arxiv.org/pdf/2504.21677
+20. **Script** Script of the dataset. If there are transliteration or Arabizi, use Latin.
+21. **Tokenized** Is the dataset lemmatized or stemmed?
+22. **Host** The main repoistory that hosts the dataset.
+23. **Access** Free if the dataset is public. Upon Request, if the dataset is behind a form. With-Fee if the dataset is paid.
+24. **Cost** the cost of the dataset if paid.
+25. **Has Splits** True only if the dataset has (training and test splits). If the dataset has only one split, even if it is for testing, we set that to false.
+26. **Partial** True if the dataset is a partial release or a subset of a larger dataset.
+27. **Tasks** the list of tasks that this dataset is intended for. Use other if the task doesn’t exist in the options.
+28. **Venue Title** the title of the venue i.e. EMNLP, ACL, etc.
+29. **Venue Type** the veneue type.
+30. **Venue Name** the full name of the venue. for arXiv we don't use the full name.
+31. **Authors** the authors of the paper in an ordered fashion.
+32. **Affiliations** list only the affiliations without repetition
+33. **Abstract** the full abstract of the paper.
